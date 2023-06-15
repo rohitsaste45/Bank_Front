@@ -35,7 +35,19 @@ function ListDemo() {
       <input type="button" value="Add New Item" onClick={addItemAction} />
 
       {list.map((item) => (
-        <h1>{item}</h1>
+        <div>
+          <h1>{item}</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
+            sit laborum quia non hic doloribus id quisquam consequuntur quis
+            iusto quod, assumenda vitae, molestias ipsa ex labore quaerat
+            ducimus accusamus.
+          </p>
+          <div>
+            <input type="button" value="&#128077;" />
+            <input type="button" value="&#128078;" />
+          </div>
+        </div>
       ))}
     </>
   );
