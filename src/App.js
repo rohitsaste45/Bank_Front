@@ -23,9 +23,11 @@ function MyTodo() {
     setTodo(newTodo);
   };
 
-  let addTodoAction = () => {
+  let addTodoAction = async () => {
     console.log(todo);
-    // TODO :: Save this do DB
+
+    let url = `http://localhost:4000/addtodo?task=${todo.task}&description=${todo.description}`;
+    await fetch(url);
   };
 
   return (
