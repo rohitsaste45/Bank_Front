@@ -9,25 +9,29 @@ function App() {
 
 function ListDemo() {
   let data = "Hello Universe";
-  let list = ["delhi", "calcutta", "chennai"];
+  let list = ["", "", "", "", ""];
+
+  let list1 = [];
+  for (let i = 0; i < 100; i++) {
+    list1.push("");
+  }
 
   return (
     <>
       <h1>{data}</h1>
 
-      {/** Version.3 */}
-      {list.map((item) => (
-        <>
-          <h1>Hello World</h1>
-        </>
+      {list1.map((item) => (
+        <div>
+          <h1>Hello Universe</h1>
+        </div>
       ))}
 
-      {/** Version.2 */}
-      {list.map((item) => "Hello" + item)}
-
       <hr />
-      {/** Version.1 */}
-      {list.map((item) => item)}
+      {list.map((item) => (
+        <div>
+          <h1>Hello World</h1>
+        </div>
+      ))}
     </>
   );
 }
