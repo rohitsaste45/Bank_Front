@@ -3,19 +3,23 @@ function App() {
     <>
       <h1>Props Demo</h1>
 
-      {/** Calling the MessageDemo */}
-      <MessageDemo />
-      <MessageDemo />
-      <MessageDemo />
+      {/** Calling the MessageDemo(1, 'abcd') */}
+      <MessageDemo name="Vitthal" />
+      <MessageDemo name="shivam" />
+      <MessageDemo name="dipali" />
+      <MessageDemo name="cdac" />
     </>
   );
 }
 
-// Reusable + but returns static output
-function MessageDemo() {
+// Reusable
+// how to make this "dynmaic"
+function MessageDemo(props) {
+  // console.log("I am inside messagedemo", props);
+
   return (
     <>
-      <h1>Hello Message</h1>
+      <h1>Hello {props.name}</h1>
     </>
   );
 }
