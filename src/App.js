@@ -14,9 +14,6 @@ function ListDemo() {
   let [list, setList] = useState(["delhi"]);
 
   let addItemAction = () => {
-    // console.log(inputRef.current);
-    // console.log(document.querySelector("#id1"));
-
     let inputValue = inputRef.current.value;
     let newList = [inputValue, ...list];
     setList(newList);
