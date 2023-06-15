@@ -16,7 +16,8 @@ function ListDemo() {
     let inputRef = document.querySelector("#id1");
     let inputValue = inputRef.value;
 
-    let newList = [...list, inputValue];
+    // let newList = [...list, inputValue];
+    let newList = [inputValue, ...list];
     setList(newList);
 
     inputRef.value = "";
