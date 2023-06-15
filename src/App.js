@@ -4,6 +4,8 @@ function App() {
       <h1>Props Demo</h1>
 
       {/** Calling the MessageDemo(1, 'abcd') */}
+      <MessageDemo />
+      <MessageDemo name="Pawan" />
       <MessageDemo name="Vitthal" email="v@gmail.com" />
       <MessageDemo name="shivam" email="s@gmail.com" />
       <MessageDemo name="dipali" email="d@gmail.com" />
