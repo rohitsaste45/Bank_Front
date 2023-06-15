@@ -13,6 +13,7 @@ function ListDemo() {
   let [list, setList] = useState(["delhi"]);
 
   let addItemAction = () => {
+    // RESTRICATED :: WE SHOULD NOT USE DOCUMENT OBJECT :: STRICT NO
     let inputRef = document.querySelector("#id1");
     let inputValue = inputRef.value;
 
