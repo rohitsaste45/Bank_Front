@@ -14,9 +14,9 @@ function MyTodo() {
   // S1 :: FORM :: MULTIPLE INPUT FIELD
   let [todo, setTodo] = useState({ task: "" });
 
-  // S3
+  // S3 :: gething the input object on chagne
   let handleChnageTaskAction = (e) => {
-    // console.log(e.target);
+    console.log(e.target);
     // e.target === input object
 
     let newTodo = { ...todo, task: e.target.value };
