@@ -24,8 +24,8 @@ function MyTodo() {
   };
 
   let addTodoAction = () => {
-    // alert(todo.task + todo.description);
     console.log(todo);
+    // TODO :: Save this do DB
   };
 
   return (
