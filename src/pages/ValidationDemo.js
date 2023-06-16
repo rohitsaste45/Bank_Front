@@ -24,6 +24,13 @@ function ValidationDemo() {
           required
         />
 
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Enter kuchbhi.."
+          required
+        />
+
         <input type="button" value="Submit" onClick={submitAction} />
       </form>
     </>
