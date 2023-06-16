@@ -12,6 +12,7 @@ function App() {
           <Route path="/home" element={<h1>Home</h1>} />
           <Route path="/todo" element={<MyTodo />} />
           <Route path="/registration" element={<MyRegistration />} />
+          <Route path="*" element={<h1>Page Not Found</h1>} />
         </Routes>
       </BrowserRouter>
     </>
