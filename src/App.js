@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import MyTodo from "./pages/MyTodo";
 import MyRegistration from "./pages/MyRegistration";
 
@@ -6,6 +6,10 @@ function App() {
   return (
     <>
       <BrowserRouter>
+        <Link to={"/home"}>Home |</Link>
+        <Link to={"/todo"}>Todo |</Link>
+        <Link to={"/registration"}>Registration</Link>
+
         <Routes>
           {/** 1 Route means 1 Page */}
           <Route path="/" element={<h1>Hello</h1>} />
