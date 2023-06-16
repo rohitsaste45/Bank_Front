@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <NavigationLinks />
+        <MyNavigationLinks />
 
         <Routes>
           {/** 1 Route means 1 Page */}
@@ -17,13 +17,13 @@ function App() {
           <Route path="*" element={<h1>Page Not Found</h1>} />
         </Routes>
 
-        <NavigationLinks />
+        <MyNavigationLinks />
       </BrowserRouter>
     </>
   );
 }
 
-function NavigationLinks() {
+function MyNavigationLinks() {
   return (
     <>
       <Link to={"/home"}>Home |</Link>
