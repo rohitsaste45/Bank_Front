@@ -22,6 +22,7 @@ function ValidationDemo() {
           type="text"
           className="form-control"
           placeholder="Enter..."
+          minLength="3"
           required
         />
 
