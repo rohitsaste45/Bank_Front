@@ -4,8 +4,6 @@ function ValidationDemo() {
   let formRef = useRef();
 
   let submitAction = () => {
-    console.log(formRef.current);
-
     formRef.current.classList.add("was-validated");
 
     let formStatus = formRef.current.checkValidity();
