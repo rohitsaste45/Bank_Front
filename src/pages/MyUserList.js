@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function MyUserList() {
   const [userList, setUserList] = useState([]);
+
+  useEffect(() => {
+    getAllUserAction();
+  }, []);
 
   const getAllUserAction = async () => {
     let url = `http://localhost:4000/find-all-user`;
@@ -14,7 +18,6 @@ function MyUserList() {
   return (
     <>
       <h1>User List</h1>
-      <input type="button" value="Get All User " onClick={getAllUserAction} />
 
       {userList.map((item) => (
         <>
