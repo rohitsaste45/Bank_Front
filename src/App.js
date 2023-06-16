@@ -6,9 +6,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Link to={"/home"}>Home |</Link>
-        <Link to={"/todo"}>Todo |</Link>
-        <Link to={"/registration"}>Registration</Link>
+        <NavigationLinks />
 
         <Routes>
           {/** 1 Route means 1 Page */}
@@ -18,7 +16,19 @@ function App() {
           <Route path="/registration" element={<MyRegistration />} />
           <Route path="*" element={<h1>Page Not Found</h1>} />
         </Routes>
+
+        <NavigationLinks />
       </BrowserRouter>
+    </>
+  );
+}
+
+function NavigationLinks() {
+  return (
+    <>
+      <Link to={"/home"}>Home |</Link>
+      <Link to={"/todo"}>Todo |</Link>
+      <Link to={"/registration"}>Registration</Link>
     </>
   );
 }
