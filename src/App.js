@@ -3,6 +3,7 @@ import MyTodo from "./pages/MyTodo";
 import MyRegistration from "./pages/MyRegistration";
 import MyNavigationLinks from "./pages/MyNavigationLinks";
 import MyTodoList from "./pages/MyTodoList";
+import MyUserList from "./pages/MyUserList";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/todo" element={<MyTodo />} />
           <Route path="/todo-list" element={<MyTodoList />} />
           <Route path="/registration" element={<MyRegistration />} />
+          <Route path="/user-list" element={<MyUserList />} />
           <Route path="*" element={<h1>Page Not Found</h1>} />
         </Routes>
       </BrowserRouter>
