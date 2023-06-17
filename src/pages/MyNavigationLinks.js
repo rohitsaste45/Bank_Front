@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 function MyNavigationLinks() {
   return (
     <>
-      <Navbar expand="lg" className="bg-body-tertiary">
+      <Navbar bg="success" data-bs-theme="dark" expand="lg">
         <Container>
           <Navbar.Brand href="#home">My Project</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
+            <Nav className="ms-auto">
               <Nav.Link as={Link} to={"/home"}>
                 Home
               </Nav.Link>
