@@ -21,6 +21,7 @@ function MyTodo() {
     formRef.current.classList.add("was-validated");
     let formStatus = formRef.current.checkValidity();
     if (!formStatus) {
+      alert();
       return;
     }
 

@@ -31,25 +31,37 @@ function MyRegistration() {
   };
 
   let registerAction = async () => {
-    formRef.current.classList.add("was-validated");
-    let formStatus = formRef.current.checkValidity();
-    if (!formStatus) {
-      return;
+    try {
+      formRef.current.classList.add("was-validated");
+      let formStatus = formRef.current.checkValidity();
+      if (!formStatus) {
+        return;
+      }
+
+      // BACKEND
+      let url = `http://localhost:4000/adduser?username=${user.username}&password=${user.password}&email=${user.email}&mobile=${user.mobile}`;
+
+      let res = await fetch(url);
+
+      if (res.status != 200) {
+        let serverMsg = await res.text();
+        throw new Error(serverMsg);
+      }
+
+      let newuser = {
+        username: "",
+        password: "",
+        email: "",
+        mobile: "",
+      };
+      setUser(newuser);
+
+      formRef.current.classList.remove("was-validated");
+
+      alert("success");
+    } catch (err) {
+      alert(err.message);
     }
-
-    // BACKEND
-    let url = `http://localhost:4000/adduser?username=${user.username}&password=${user.password}&email=${user.email}&mobile=${user.mobile}`;
-    await fetch(url);
-
-    let newuser = {
-      username: "",
-      password: "",
-      email: "",
-      mobile: "",
-    };
-    setUser(newuser);
-
-    formRef.current.classList.remove("was-validated");
   };
 
   return (
