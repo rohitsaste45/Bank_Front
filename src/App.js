@@ -16,7 +16,7 @@ function App() {
 
         <Routes>
           {/** 1 Route means 1 Page */}
-          <Route path="/" element={<h1>Hello</h1>} />
+          <Route path="/" element={<AppLogin />} />
           <Route path="/login" element={<AppLogin />} />
 
           {/** Private Needs Protection */}
