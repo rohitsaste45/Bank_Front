@@ -31,8 +31,15 @@ function AppLogin() {
       }
 
       // BACKEND :: ...
-      let url = `http://localhost:4000/login-by-get?email=${user.email}&password=${user.password}`;
-      let res = await fetch(url);
+      let url = `http://localhost:4000/login-by-post`;
+      let data = { email: user.email, password: user.password };
+      let res = await fetch(url, {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
       if (res.status == 500) {
         let erroMessage = await res.text();
