@@ -22,12 +22,21 @@ function MyTodoList() {
 
   return (
     <>
-      <h1>Display All Todo</h1>
+      <div className="row justify-content-center">
+        <div className="col-sm-12 col-md-6">
+          <h1>Display All Todo</h1>
+        </div>
+      </div>
 
       {todoList.map((item) => (
         <>
-          <div className="alert alert-secondary mb-1">
-            {item.task} <p>{item.description}</p>
+          <div className="row justify-content-center">
+            <div className="col-sm-12 col-md-6">
+              <div className="alert alert-secondary mb-1">
+                <div className="fs-3 text-capitalize">{item.task} </div>
+                <div>{item.description}</div>
+              </div>
+            </div>
           </div>
         </>
       ))}
