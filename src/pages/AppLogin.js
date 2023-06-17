@@ -30,13 +30,25 @@ function AppLogin() {
         return;
       }
 
-      // TODO BACKEND :: ...
-      localStorage.setItem("loginStatus", "true");
+      // BACKEND :: ...
+      let url = `http://localhost:4000/login-by-get?email=${user.email}&password=${user.password}`;
+      let res = await fetch(url);
 
+      if (res.status == 500) {
+        let erroMessage = await res.text();
+        throw new Error(erroMessage);
+      }
+
+      localStorage.setItem("loginStatus", "true");
       navigate("/home", { replace: true });
     } catch (err) {
       alert(err.message);
       setIsError(true);
+    } finally {
+      setTimeout(() => {
+        setIsError(false);
+        setIsSuccess(false);
+      }, 5000);
     }
   };
 
