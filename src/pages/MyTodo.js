@@ -42,32 +42,42 @@ function MyTodo() {
 
   return (
     <>
-      <form ref={formRef} className="needs-validation">
-        <input
-          className="form-control"
-          type="text"
-          placeholder="Enter task"
-          value={todo.task}
-          onChange={handleChnageTaskAction}
-          required
-        />
+      <div className="row justify-content-center">
+        <div className="col-sm-12 col-md-6">
+          <form ref={formRef} className="needs-validation">
+            <h1>Todo Application Form</h1>
+            <input
+              className="form-control form-control-lg mb-2"
+              type="text"
+              placeholder="Enter task"
+              value={todo.task}
+              onChange={handleChnageTaskAction}
+              required
+            />
 
-        <textarea
-          className="form-control"
-          cols="30"
-          rows="3"
-          placeholder="Enter Description"
-          value={todo.description}
-          onChange={handleChangeDescriptionAction}
-          required
-        ></textarea>
+            <textarea
+              className="form-control mb-2"
+              cols="30"
+              rows="3"
+              placeholder="Enter Description"
+              value={todo.description}
+              onChange={handleChangeDescriptionAction}
+              required
+            ></textarea>
 
-        <input type="button" value="Add Todo" onClick={addTodoAction} />
-      </form>
+            <input
+              className="btn btn-lg btn-secondary w-100"
+              type="button"
+              value="Add Todo"
+              onClick={addTodoAction}
+            />
+          </form>
 
-      {sucessBox && (
-        <div className="alert alert-success">Operation Success</div>
-      )}
+          {sucessBox && (
+            <div className="alert alert-success">Operation Success</div>
+          )}
+        </div>
+      </div>
     </>
   );
 }
