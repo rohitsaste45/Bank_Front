@@ -1,6 +1,8 @@
 import { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function AppLogin() {
+  const navigate = useNavigate();
   let formRef = useRef();
   let [isSuccess, setIsSuccess] = useState(false);
   let [isError, setIsError] = useState(false);
@@ -28,7 +30,8 @@ function AppLogin() {
         return;
       }
 
-      // BACKEND :: ...
+      // TODO BACKEND :: ...
+      navigate("/home");
     } catch (err) {
       alert(err.message);
       setIsError(true);
