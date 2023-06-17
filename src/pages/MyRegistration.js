@@ -75,49 +75,55 @@ function MyRegistration() {
 
   return (
     <>
-      <form ref={formRef} className="needs-validation">
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Enter username"
-          value={user.username}
-          onChange={handlerUsernameAction}
-          required
-        />
-        <input
-          type="password"
-          className="form-control"
-          placeholder="Enter password"
-          value={user.password}
-          onChange={handlerPasswordAction}
-          required
-        />
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Enter Email"
-          value={user.email}
-          onChange={handlerEmailAction}
-          required
-        />
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Enter mobile"
-          value={user.mobile}
-          onChange={handlerMobileAction}
-          required
-        />
-        <input
-          type="button"
-          value="Register"
-          className="w-100"
-          onClick={registerAction}
-        />
-      </form>
+      <div className="row justify-content-center">
+        <div className="col-sm-12 col-md-6">
+          <div className="fs-2">Appliaction Form</div>
 
-      {isSuccess && <div className="alert alert-success">Success</div>}
-      {isError && <div className="alert alert-danger">Error</div>}
+          <form ref={formRef} className="needs-validation">
+            <input
+              type="text"
+              className="form-control form-control-lg mb-2 mt-1"
+              placeholder="Enter username"
+              value={user.username}
+              onChange={handlerUsernameAction}
+              required
+            />
+            <input
+              type="password"
+              className="form-control form-control-lg mb-2"
+              placeholder="Enter password"
+              value={user.password}
+              onChange={handlerPasswordAction}
+              required
+            />
+            <input
+              type="email"
+              className="form-control form-control-lg mb-2"
+              placeholder="Enter Email"
+              value={user.email}
+              onChange={handlerEmailAction}
+              required
+            />
+            <input
+              type="text"
+              className="form-control form-control-lg mb-2"
+              placeholder="Enter mobile"
+              value={user.mobile}
+              onChange={handlerMobileAction}
+              required
+            />
+            <input
+              type="button"
+              value="Register"
+              className="w-100 btn btn-lg btn-secondary"
+              onClick={registerAction}
+            />
+          </form>
+
+          {isSuccess && <div className="alert alert-success">Success</div>}
+          {isError && <div className="alert alert-danger">Error</div>}
+        </div>
+      </div>
     </>
   );
 }
