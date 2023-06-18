@@ -1,39 +1,40 @@
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Container, Nav, NavDropdown, Navbar,border } from "react-bootstrap"
 
 function AppLogin() {
   const navigate = useNavigate();
-  let formRef = useRef();
-  let [isSuccess, setIsSuccess] = useState(false);
-  let [isError, setIsError] = useState(false);
+  const formRef = useRef();
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [isError, setIsError] = useState(false);
 
-  let [user, setUser] = useState({
+  const [user, setUser] = useState({
     email: "",
     password: "",
   });
 
-  let handlerPasswordAction = (e) => {
-    let newuser = { ...user, password: e.target.value };
+  const handlerPasswordAction = (e) => {
+    const newuser = { ...user, password: e.target.value };
     setUser(newuser);
   };
 
-  let handlerEmailAction = (e) => {
-    let newuser = { ...user, email: e.target.value };
+  const handlerEmailAction = (e) => {
+    const newuser = { ...user, email: e.target.value };
     setUser(newuser);
   };
 
-  let loginAction = async () => {
+  const loginAction = async () => {
     try {
       formRef.current.classList.add("was-validated");
-      let formStatus = formRef.current.checkValidity();
+      const formStatus = formRef.current.checkValidity();
       if (!formStatus) {
         return;
       }
 
       // BACKEND :: ...
-      let url = `http://localhost:4000/login-by-post`;
-      let data = { email: user.email, password: user.password };
-      let res = await fetch(url, {
+      const url = `http://localhost:4000/login-by-post`;
+      const data = { email: user.email, password: user.password };
+      const res = await fetch(url, {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
@@ -41,9 +42,9 @@ function AppLogin() {
         },
       });
 
-      if (res.status == 500) {
-        let erroMessage = await res.text();
-        throw new Error(erroMessage);
+      if (res.status === 500) {
+        const errorMessage = await res.text();
+        throw new Error(errorMessage);
       }
 
       localStorage.setItem("loginStatus", "true");
@@ -60,43 +61,44 @@ function AppLogin() {
   };
 
   return (
-    <>
-      <div className="row justify-content-center">
-        <div className="col-sm-12 col-md-6">
-          <div className="fs-2">Login Form</div>
+    <div
+      className="d-flex align-items-center justify-content-center"
+      style={{ minHeight: "100vh", height: "100%" }}
+    >
+      <div className="border border-1 p-4 rounded-lg shadow-lg text-primary" style={{ width: "400px" }}>
+        <div className="fs-2 mb-4 text-center">Login Form</div>
 
-          <form ref={formRef} className="needs-validation">
-            <input
-              type="email"
-              className="form-control form-control-lg mb-2"
-              placeholder="Enter Email"
-              value={user.email}
-              onChange={handlerEmailAction}
-              required
-            />
+        <form ref={formRef} className="needs-validation">
+          <input
+            type="email"
+            className="form-control form-control-lg mb-2"
+            placeholder="Enter Email"
+            value={user.email}
+            onChange={handlerEmailAction}
+            required
+          />
 
-            <input
-              type="password"
-              className="form-control form-control-lg mb-2"
-              placeholder="Enter password"
-              value={user.password}
-              onChange={handlerPasswordAction}
-              required
-            />
+          <input
+            type="password"
+            className="form-control form-control-lg mb-2"
+            placeholder="Enter password"
+            value={user.password}
+            onChange={handlerPasswordAction}
+            required
+          />
 
-            <input
-              type="button"
-              value="Login"
-              className="w-100 btn btn-lg btn-secondary"
-              onClick={loginAction}
-            />
-          </form>
+          <input
+            type="button"
+            value="Login"
+            className="w-100 btn btn-lg btn-primary"
+            onClick={loginAction}
+          />
+        </form>
 
-          {isSuccess && <div className="alert alert-success">Success</div>}
-          {isError && <div className="alert alert-danger">Error</div>}
-        </div>
+        {isSuccess && <div className="alert alert-success">Success</div>}
+        {isError && <div className="alert alert-danger">Error</div>}
       </div>
-    </>
+    </div>
   );
 }
 

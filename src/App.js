@@ -53,6 +53,7 @@ function App() {
               </ProtectedRoute>
             }
           />
+          
 
           <Route path="/registration" element={<MyRegistration />} />
           <Route path="/validation-demo" element={<ValidationDemo />} />
